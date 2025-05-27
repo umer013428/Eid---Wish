@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eid ul Azha Surprise Wish</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0e68c;
+    color: #3a3a3a;
+    text-align: center;
+    padding: 50px;
+  }
+  #message {
+    margin-top: 50px;
+    font-size: 1.8em;
+    display: none;
+    animation: fadeIn 2s forwards;
+  }
+  @keyframes fadeIn {
+    to {opacity: 1;}
+  }
+</style>
+</head>
+<body>
+  <h1>Eid ul Azha Mubarak!</h1>
+  <p>Wait for it...</p>
+
+  <div id="message"></div>
+
+  <script>
+    // Get 'name' parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name') || 'Friend';
+
+    // Surprise message function
+    function showMessage() {
+      const msg = `Dear <strong>${name}</strong>,<br>May this Eid bring blessings, joy, and peace to your life!`;
+      const messageDiv = document.getElementById('message');
+      messageDiv.innerHTML = msg;
+      messageDiv.style.display = 'block';
+    }
+
+    // Delay surprise message by 3 seconds
+    setTimeout(showMessage, 3000);
+  </script>
+</body>
+</html>
